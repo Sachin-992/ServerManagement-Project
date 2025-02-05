@@ -1,0 +1,14 @@
+﻿<div data-name="@server.Name" 
+        data-status="Server is @(server.IsOnline?"online":"offline")"
+	    style=color:@(server.IsOnline?"green":"red")>
+	<!-- @status at @DateTime.Now  -->  <!--implicit razor expression-->
+	@server.Name is  in @server.City @(server.IsOnline ? "online" : "offline")
+</div>
+
+@code {
+	// private string status = "Server is offline"; // or
+
+
+	private Server server = new Server { Name = "Server 1", City = "Toranto" };
+
+}
